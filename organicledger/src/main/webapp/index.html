@@ -1,0 +1,63 @@
+
+<html>
+
+
+<head>
+
+<meta name="description" content="simple slider; medium.com example">
+
+<script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js"></script>
+
+<link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.css"
+	type="text/css" rel="stylesheet" />
+
+<link href="../css/layerjs.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+	<div lj-type="stage">
+
+		<div lj-type="layer" lj-name="slider" lj-default-frame="frame1"
+			lj-native-scroll="false">
+
+			<div lj-type="frame" lj-name="intro" lj-fit-to="responsive"
+				lj-start-position="center" lj-neighbors.r="api">
+
+				<iframe width="100%" height="100%" src="intro.html"></iframe>
+
+			</div>
+
+			<div lj-type="frame" lj-name="api" lj-fit-to="responsive"
+				lj-start-position="center" lj-neighbors.l="intro">
+
+				<iframe width="100%" height="100%" src="api.html"></iframe>
+
+			</div>
+
+		</div>
+
+		<div lj-type="layer" lj-native-scroll="false" id="arrows">
+
+			<div lj-type="frame" lj-fit-to="width" lj-start-position="center"
+				lj-no-scrolling="true">
+
+				<a class="btn-left btn" href="#slider.!left?p=right" id="left">&lt;</a> 
+				<a class="btn-right btn" href="#slider.!right?p=left" id="right">&gt;</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+		layerJS.init();
+	</script>
+
+</body>
+
+
+</html>

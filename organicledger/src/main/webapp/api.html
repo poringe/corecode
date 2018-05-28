@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="../css/swagger-ui.css">
+<div id="swagger-ui"></div>
+
+<script src="../js/swagger-ui-bundle.js"></script>
+<script src="../js/swagger-ui-standalone-preset.js"></script>
+
+<style>
+.swagger-ui .info hgroup.main a {
+	display: none
+}
+
+.swagger-ui .info .base-url {
+	display: none
+}
+
+.swagger-ui .topbar {
+	padding: 8px 0;
+	background-color: #ffffff;
+}
+</style>
+
+<script>
+	window.onload = function() {
+		var currentLocation = window.location;
+		var prefixUrl = currentLocation.protocol + '//'
+				+ currentLocation.hostname + ':' + currentLocation.port;
+		var apis = [ {
+			url : prefixUrl + '/v2/api-docs?group=User%20API',
+			name : 'User API'
+		}, {
+			url : prefixUrl + '/v2/api-docs?group=Unit%20API',
+			name : 'Unit API'
+		}, {
+			url : prefixUrl + '/v2/api-docs?group=Farm%20Profile%20API',
+			name : 'Farm Profile API'
+		}, {
+			url : prefixUrl + '/v2/api-docs?group=Product%20Category%20API',
+			name : 'Product Category API'
+		}, {
+			url : prefixUrl + '/v2/api-docs?group=Product%20Master%20API',
+			name : 'Product Master API'
+		}, {
+			url : prefixUrl + '/v2/api-docs?group=Product%20Type%20API',
+			name : 'Product Type API'
+		} ];
+
+		const
+		ui = SwaggerUIBundle({
+			urls : apis,
+			dom_id : '#swagger-ui',
+			presets : [ SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset ],
+			plugins : [ SwaggerUIBundle.plugins.DownloadUrl ],
+			deepLinking : true,
+			supportedSubmitMethods : [],
+			layout : "StandaloneLayout"
+		})
+
+		window.ui = ui
+		document.getElementsByClassName('topbar-wrapper')[0]
+				.getElementsByTagName('a')[0].style.display = 'none';
+	}
+</script>
+</html>
