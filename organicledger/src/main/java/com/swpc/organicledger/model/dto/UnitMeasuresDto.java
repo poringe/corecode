@@ -1,5 +1,6 @@
 package com.swpc.organicledger.model.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -26,7 +27,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class UnitMeasuresDto {
+public class UnitMeasuresDto  implements Serializable{
 
 	private Long id;
 

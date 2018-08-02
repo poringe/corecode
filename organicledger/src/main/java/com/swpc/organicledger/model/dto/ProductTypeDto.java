@@ -1,5 +1,6 @@
 package com.swpc.organicledger.model.dto;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.validation.constraints.Digits;
@@ -14,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class ProductTypeDto {
+public class ProductTypeDto  implements Serializable{
 	private Long id;
 
 	@NotEmpty(message = "{producttype.name.required}")

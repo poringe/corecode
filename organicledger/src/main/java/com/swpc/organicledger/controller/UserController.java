@@ -58,6 +58,12 @@ public class UserController {
 		return convertToDto(userService.get(id));
 	}
 
+	@RequestMapping(value = "/username/{username}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(value = HttpStatus.OK)
+	public @ResponseBody UserDto getByUsername(@PathVariable String username) throws Exception {
+		return convertToDto(userService.loadUserByUsername(username));
+	}
+	
 	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public @ResponseBody UserDto create(@Valid @RequestBody UserDto user) throws Exception {

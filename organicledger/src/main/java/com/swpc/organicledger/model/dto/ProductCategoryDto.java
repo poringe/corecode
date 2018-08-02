@@ -1,5 +1,6 @@
 package com.swpc.organicledger.model.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.validation.constraints.Size;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class ProductCategoryDto {
+public class ProductCategoryDto  implements Serializable{
 
 	private Long id;
 

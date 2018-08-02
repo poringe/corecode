@@ -37,6 +37,9 @@ public class Farm {
 	@Column(name = "FARM_CODE", length = 15)
 	private String farmCode;
 
+	@Column(name = "FARM_PROFILE_CODE", length = 10)
+	private String farmProfileCode;
+	
 	@Column(name = "IMG_PATH", length = 100)
 	private String imagePath;
 

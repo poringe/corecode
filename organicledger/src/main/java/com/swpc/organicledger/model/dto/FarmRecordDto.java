@@ -1,4 +1,4 @@
-package com.swpc.organicledger.model;
+package com.swpc.organicledger.model.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -20,73 +20,47 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.swpc.organicledger.emodel.RecordTypeEnum;
+import com.swpc.organicledger.model.Unit;
+import com.swpc.organicledger.model.UnitMeasures;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "T_FARM_RECORD")
 @Getter
 @Setter
-@EqualsAndHashCode(of = "id")
-@EntityListeners(AuditingEntityListener.class)
-public class FarmRecord {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private Long id;
+public class FarmRecordDto {
 
-	@Column(name = "FARM_PROFILE_CODE", length = 10)
 	private String farmProfileCode;
 
-	@Column(name = "FARM_CODE", length = 15)
 	private String farmCode;
 	
-	@Column(name = "FARMING_CODE", length = 20)
 	private String farmingCode;
 
-	@Column(name = "RECORD_DATE")
 	private Date recordDate;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "RECORD_TYPE", length = 10)
 	private RecordTypeEnum recordType;
 
-	@Column(name = "RECORD_DESC", length = 500)
 	private String recordDesc;
 	
-	@Column(name = "RECORD_FACTOR", length = 100)
 	private String recordFactor;
 	
-	@Column(name = "RECORD_AMOUNT")
 	private BigDecimal recordAmount;
 	
-	@Column(name = "RECORD_REMARK", length = 500)
-	private String recordRemark;
-	
-	@Column(name = "IMAGE_RECORD", length = 255)
-	private String imageRecord;
-	
-	@Column(name = "VIDEO_RECORD", length = 255)
-	private String videoRecord;
-	
-	@Column(name = "UNIT_NAME", length = 100)
 	private String unitName;
 	
-	@Column(name = "BASE_UNIT_NAME", length = 100)
 	private String baseUnitName;
 	
-	@Column(name = "CONVERT_UNIT")
 	private BigDecimal convertUnit;
 	
-	@Column(name = "CREATED_DATE", nullable = false, updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreatedDate
+	private String recordRemark;
+	
+	private String imageRecord;
+	
+	private String videoRecord;
+	
 	private Date createdDate;
 
-	@Column(name = "CREATED_BY")
-	@CreatedBy
 	private String createdBy;
 
 	

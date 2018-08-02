@@ -1,5 +1,6 @@
 package com.swpc.organicledger.model.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class ProductMasterDto {
+public class ProductMasterDto  implements Serializable{
 
 	private Long id;
 	

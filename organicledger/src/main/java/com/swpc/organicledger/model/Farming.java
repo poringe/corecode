@@ -50,6 +50,9 @@ public class Farming {
 	@Column(name = "DESCRIPTION", length = 500)
 	private String desc;
 
+	@Column(name = "FARM_DESC", length = 500)
+	private String farmDesc;
+	
 	@ManyToOne(targetEntity = ProductType.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "PRODUCT_TYPE_ID")
 	private ProductType productType;
